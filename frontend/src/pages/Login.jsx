@@ -3,6 +3,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
+import API from '../services/api';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,12 +22,16 @@ const Login = () => {
     }
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      // Later: API call for authentication
-      navigate("/dashboard"); // ✅ Go to dashboard
-    }, 1000);
+    try {
+    const { data } = await API.post('/auth/login', { email, password });
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
+    navigate("/dashboard");
+  } catch (error) {
+    alert(error.response?.data?.message || 'Login failed');
+  } finally {
+    setIsLoading(false);
+  }
   };
 
   return (
