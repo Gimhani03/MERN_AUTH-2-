@@ -3,6 +3,7 @@ import './ConfirmPassword.css'
 import { FaLock } from 'react-icons/fa'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom';
+import API from '../services/api';
 
 const ConfirmPassword = () => {
 
@@ -31,15 +32,20 @@ const navigate = useNavigate();
       alert("Password must be at least 8 characters long");
       return;
     }
+    const email = localStorage.getItem('resetEmail');
+
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Password changed successfully!");
-      // Later: API call to update password
-      navigate("/login"); // go back to login
-    }, 1000);
+    try {
+    await API.post('/password/reset-password', { email, newPassword });
+    localStorage.removeItem('resetEmail');
+    alert('Password changed successfully!');
+    navigate("/login");
+  } catch (error) {
+    alert(error.response?.data?.message || 'Failed to reset password');
+  } finally {
+    setIsLoading(false);
+  }
   };
   return (
      <div className="changepassword-wrapper">
