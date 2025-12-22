@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import './ForgotPassword.css'
 import { useNavigate } from 'react-router-dom';
+import API from '../services/api';
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
@@ -18,13 +19,16 @@ const ForgotPassword = () => {
     }
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("OTP sent to your email!");
-      // Later you can add API call here
-      navigate("/reset-password");
-    }, 1000);
+    try {
+    await API.post('/password/send-otp', { email });
+    localStorage.setItem('resetEmail', email);
+    alert('OTP sent to your email!');
+    navigate("/reset-password");
+  } catch (error) {
+    alert(error.response?.data?.message || 'Failed to send OTP');
+  } finally {
+    setIsLoading(false);
+  }
   };
     
   return (
