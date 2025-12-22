@@ -5,6 +5,7 @@ import { FaLock } from "react-icons/fa";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import './register.css'
 import { Link, useNavigate } from 'react-router-dom';
+import API from '../services/api';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -24,12 +25,16 @@ const Register = () => {
     }
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Registration successful! Please login.");
-      navigate("/login");
-    }, 1000);
+    try {
+    const { data } = await API.post('/auth/register', { name, email, password });
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
+    navigate("/login");
+  } catch (error) {
+    alert(error.response?.data?.message || 'Registration failed');
+  } finally {
+    setIsLoading(false);
+  }
   };
 
   return (
