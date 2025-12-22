@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './ResetPassword.css';
 import { useNavigate } from 'react-router-dom';
+import API from '../services/api';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -38,13 +39,18 @@ const ResetPassword = () => {
       return;
     }
 
-    setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      // Later: verify OTP with backend
-      navigate("/confirm-password");
-    }, 1000);
+    const email = localStorage.getItem('resetEmail');
+  const otpString = otp.join('');
+
+  setIsLoading(true);
+  try {
+    await API.post('/password/verify-otp', { email, otp: otpString });
+    navigate("/confirm-password");
+  } catch (error) {
+    alert(error.response?.data?.message || 'Invalid OTP');
+  } finally {
+    setIsLoading(false);
+  }
   };
 
   return (
