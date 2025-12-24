@@ -1,7 +1,7 @@
 .login-wrapper {
     position: relative;
     width: 420px;
-    height: 450px;
+    height: 470px;
     background: rgba(47, 84, 249, 0.389);
     border-radius: 10px;
     color: white;
@@ -90,5 +90,21 @@ form .register {
 }
 
 .register p a:hover {
+    text-decoration: underline;
+}
+
+form .admin-login {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.admin-login p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-login p a:hover {
     text-decoration: underline;
 }
