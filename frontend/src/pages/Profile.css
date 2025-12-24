@@ -1,0 +1,314 @@
+.profile-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(47, 84, 249, 0.389);
+  padding: 40px 20px;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-header-section {
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.profile-header-section h1 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.card-header h2 {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+}
+
+.edit-button {
+  background: rgb(47, 84, 249);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  background: rgba(47, 84, 249, 0.85);
+  transform: translateY(-1px);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button {
+  background: rgb(47, 84, 249);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  background: rgba(47, 84, 249, 0.85);
+  transform: translateY(-1px);
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background: rgb(47, 84, 249);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background: rgba(47, 84, 249, 0.85);
+  transform: translateY(-1px);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.info-icon {
+  color: rgb(47, 84, 249);
+  font-size: 18px;
+}
+
+.info-value {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid rgb(47, 84, 249);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  max-width: 400px;
+}
+
+.info-input:focus {
+  border-color: rgba(47, 84, 249, 0.8);
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-badge.admin {
+  background: #ff9800;
+  color: white;
+}
+
+.role-badge.customer {
+  background: #2196f3;
+  color: white;
+}
+
+/* Password Form */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #666;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: rgb(47, 84, 249);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Danger Zone */
+.danger-card {
+  border: 2px solid rgb(47, 84, 249);
+}
+
+.danger-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.danger-content p {
+  color: #666;
+  margin: 0;
+}
+
+.delete-button {
+  background: rgb(47, 84, 249);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.delete-button:hover:not(:disabled) {
+  background: rgba(47, 84, 249, 0.85);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(47, 84, 249, 0.3);
+}
+
+.delete-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 0 16px;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .info-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .edit-actions {
+    width: 100%;
+  }
+
+  .save-button,
+  .cancel-button {
+    flex: 1;
+  }
+}
