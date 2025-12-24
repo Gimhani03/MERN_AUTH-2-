@@ -26,6 +26,7 @@ const Login = () => {
     const { data } = await API.post('/auth/login', { email, password });
     localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
+    localStorage.setItem('role', data.user.role);
     navigate("/dashboard");
   } catch (error) {
     alert(error.response?.data?.message || 'Login failed');
@@ -77,6 +78,12 @@ const Login = () => {
           <div className="register">
             <p>
               Don't have an account? <Link to="/register">Register</Link>
+            </p>
+          </div>
+
+           <div className="admin-login">
+            <p>
+              Are you an admin? <Link to="/admin-login">Admin Login</Link>
             </p>
           </div>
         </form>
