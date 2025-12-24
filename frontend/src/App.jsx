@@ -9,6 +9,8 @@ import ForgotPassword from './pages/ForgotPassword.jsx'
 import ResetPassword from './pages/ResetPassword.jsx'
 import ConfirmPassword from './pages/ConfirmPassword.jsx'
 import Dashboard from './pages/dashboard.jsx'
+import AdminLogin from './pages/AdminLogin.jsx'
+import Profile from './pages/Profile.jsx'
 
 function App() {
   
@@ -22,6 +24,8 @@ function App() {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/confirm-password" element={<ConfirmPassword />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   )
 }
