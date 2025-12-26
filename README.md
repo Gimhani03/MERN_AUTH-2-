@@ -201,7 +201,7 @@ node scripts/createAdmin.js
 
 **Default Admin Credentials:**
 - Email: `admin@cinema.com`
-- Password: `admin123456`
+- Password: `admin123`
 - ⚠️ **Change password after first login!**
 
 ### Frontend Configuration
@@ -391,7 +391,7 @@ Headers: { "Authorization": "Bearer <token>" }
 
 **Admin Account:**
 - Email: `admin@cinema.com`
-- Password: `admin123456`
+- Password: `admin123`
 
 **Customer Account:**
 - Register at `/register`
